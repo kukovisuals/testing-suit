@@ -9,4 +9,5 @@ module.exports = defineConfig({
   env: {
     auth0_password: process.env.AUTH0_PASSWORD,
   },
+  chromeWebSecurity: false,
 });
