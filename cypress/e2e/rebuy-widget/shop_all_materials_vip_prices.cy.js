@@ -3,12 +3,14 @@ function checkPriceExist($el){
 
     // console.log($el,'VIP',alright)
     expect(alright).to.match(/[0-9]/)
+    expect(alright).to.not.match(/[0-9]\./)
 }
 function checkVIP($el){
     const alright = $el.text()
 
     // console.log($el,'VIP',alright)
     expect(alright).to.match(/[0-9]/)
+    expect(alright).to.not.match(/[0-9]\./)
 }
 
 

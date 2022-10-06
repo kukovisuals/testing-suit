@@ -1,8 +1,9 @@
 function checkPriceExist($el){
     const alright = $el.text()
 
-    // console.log($el,'VIP',alright)
+    // console.log($el,'VIP',alright)[0-9]\.
     expect(alright).to.match(/[0-9]/)
+    expect(alright).to.not.match(/[0-9]\./)
 }
 function checkVIP($el){
     const alright = $el.text()
@@ -15,7 +16,7 @@ function checkVIP($el){
 describe('highlight the VIP pricing on Bralette products', () => {
 
 
-    it('-------------------------- collections/seamless-panties --------------------------', () => {
+    it('_____________________ collections/seamless-panties _____________________', () => {
         cy.visit('https://shop.join-eby.com/pages/seamless-sheer-bralettes')
     })
     it(`pages/seamless-sheer-bralettes should have price`, () => {
@@ -75,8 +76,8 @@ describe('highlight the VIP pricing on Bralette products', () => {
     }) 
 
 
-    it('_____________________ collections/all-fabric-bralettes-for-women _____________________', () => { 
-        cy.visit('https://shop.join-eby.com/collections/high-waisted-thong')
+    it('_____________________ collections/collections/high-waisted-thong _____________________', () => { 
+        cy.visit('https://shop.join-eby.com/collections/all-fabric-bralettes-for-women')
     })   
     it(`collections/all-fabric-bralettes-for-women should have a price`, () => {
         cy.get('#filtered-prod-listing .prodTilePriceWrapper > p').each(($el) =>{

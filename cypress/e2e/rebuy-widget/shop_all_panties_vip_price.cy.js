@@ -3,10 +3,19 @@ function checkPriceExist($el){
 
     console.log('VIP',alright)
     expect(alright).to.match(/[0-9]/)
+    expect(alright).to.not.match(/[0-9]\./)
 }
 
 
 describe('highlight the VIP pricing on products', () => {
+
+
+
+
+
+
+
+
 
 
     it('______________________ collections/bikini-panties ______________________', () => {
@@ -24,6 +33,20 @@ describe('highlight the VIP pricing on products', () => {
             checkPriceExist($el)
         })
     }) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     it('______________________ collections/brief-panties ______________________', () => {
         cy.visit('https://shop.join-eby.com/collections/brief-panties')

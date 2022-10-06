@@ -3,19 +3,21 @@ function checkPriceExist($el){
 
     // console.log($el,'VIP',alright)
     expect(alright).to.match(/[0-9]/)
+    expect(alright).to.not.match(/[0-9]\./)
 }
 function checkVIP($el){
     const alright = $el.text()
 
     // console.log($el,'VIP',alright)
     expect(alright).to.match(/[0-9]/)
+    expect(alright).to.not.match(/[0-9]\./)
 }
 
 
 describe('highlight the VIP pricing on Clothing products', () => {
 
 
-    it('-------------------------- washable-eco-silk-outerwear --------------------------', () => {
+    it('_____________________ washable-eco-silk-outerwear _____________________', () => {
         cy.visit('https://shop.join-eby.com/pages/washable-eco-silk-outerwear')
     })
     it(`pages/washable-eco-silk-outerwear should have price`, () => {
@@ -33,7 +35,7 @@ describe('highlight the VIP pricing on Clothing products', () => {
         cy.visit('https://shop.join-eby.com/pages/the-seamless-bra-bodysuit')
     })   
     it(`collections/signature-bralettes should have a price`, () => {
-        cy.get('.shg-category-row.stacked span[data-shg-product-target="product-compare-price"]').each(($el) =>{
+        cy.get('.shg-category-row.stacked span[data-shg-product-target="product-price"]').each(($el) =>{
             checkPriceExist($el)
         })
     })
